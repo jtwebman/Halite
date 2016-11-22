@@ -2,13 +2,13 @@ add-apt-repository -y ppa:ubuntu-toolchain-r/test
 apt-get update
 
 # Python
-apt-get install -y python3 
+apt-get install -y python3
 
 # Java
 apt-get install -y openjdk-7-jdk libjansi-java
 
 # Rust
-curl -sSf https://static.rust-lang.org/rustup.sh | sh 
+curl -sSf https://static.rust-lang.org/rustup.sh | sh
 
 # C++
 apt-get install -y g++-4.9
@@ -22,6 +22,13 @@ wget https://bintray.com/artifact/download/sbt/debian/sbt-0.13.6.deb
 dpkg -i sbt-0.13.6.deb
 apt-get update -y
 apt-get install -y sbt
+
+# Elixir
+wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+dpkg -i erlang-solutions_1.0_all.deb
+apt-get update -y
+apt-get install -y esl-erlang
+apt-get install -y elixir
 
 # Php unit
 wget https://phar.phpunit.de/phpunit.phar

@@ -9,7 +9,7 @@ RUN apt-get install -y libstdc++6
 RUN apt-get install -y gcc
 RUN apt-get install -y g++
 RUN apt-get install -y python3 python3-pip python3-dev python3-numpy
-RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh 
+RUN curl -sSf https://static.rust-lang.org/rustup.sh | sh
 RUN apt-get install -y python-software-properties
 
 RUN apt-get install -y software-properties-common
@@ -22,6 +22,12 @@ RUN apt-get update
 RUN apt-get install -y mono-devel
 
 RUN apt-get install -y ruby
-RUN gem install bundler 
+RUN gem install bundler
 
 RUN apt-get install -y golang
+
+RUN curl -O https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+RUN apt-get update
+RUN sudo rm erlang-solutions_1.0_all.deb
+RUN sudo apt-get install -y esl-erlang
+RUN sudo apt-get install -y elixir
